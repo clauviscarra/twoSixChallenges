@@ -35,19 +35,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let foodValue = foodInFridge.indexOf(foodName) > -1;
 
-    if (foodValue) {
-      document.querySelector(".foodLocation").textContent = "your food exists";
+    let leftFirst = fridge.leftDoor.firstShelf;
+    let leftSecond = fridge.leftDoor.secondShelf;
+    let leftThird = fridge.leftDoor.thirdShelf;
+
+    let centerFirst = fridge.centerDoor.firstShelf;
+    let centerSecond = fridge.centerDoor.secondShelf;
+    let centerThird = fridge.centerDoor.thirdShelf;
+
+    let rightFirst = fridge.rightDoor.firstShelf;
+    let rightSecond = fridge.rightDoor.secondShelf;
+    let rightThird = fridge.rightDoor.thirdShelf;
+    //Check on left Door
+    if (foodValue && foodName == leftFirst) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the left side of the fridge on the first shelf`;
+    } else if (foodValue && foodName == leftSecond) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the left side of the fridge on the second shelf`;
+    } else if (foodValue && foodName == leftThird) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the left side of the fridge on the third shelf`;
+    }
+    //Check on center door
+    else if (foodValue && foodName == centerFirst) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the center side of the fridge on the first shelf`;
+    } else if (foodValue && foodName == centerSecond) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the center side of the fridge on the second shelf`;
+    } else if (foodValue && foodName == centerThird) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the center side of the fridge on the third shelf`;
+    }
+
+    //Check on right door
+    else if (foodValue && foodName == rightFirst) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the right side of the fridge on the first shelf`;
+    } else if (foodValue && foodName == rightSecond) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the right side of the fridge on the second shelf`;
+    } else if (foodValue && foodName == rightThird) {
+      document.querySelector(
+        ".foodLocation"
+      ).textContent = `The ${foodName} is in the right side of the fridge on the third shelf`;
     } else {
       console.log("not found in fridge :(");
     }
 
-    //1. If my food exists in the foodInFridge Array, initiate function
-
-    //2. Check if in leftDoor, centerDoor or rightDoor
-
-    //3. If food is not in the foodInFridge Array, send "Food item not in fridge" message
-
-    console.log(fridge.leftDoor);
+    //This code could probably be refactored, not very DRY but functional.
   };
 
   document.querySelector(".find").addEventListener("click", function () {
