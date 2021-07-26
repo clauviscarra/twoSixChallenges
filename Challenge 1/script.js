@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(totalShipments);
 
       var order = {
-        what: document.getElementById("what").value.trim(),
+        what: shipments,
         who: document.getElementById("who").value.trim(),
       };
 
