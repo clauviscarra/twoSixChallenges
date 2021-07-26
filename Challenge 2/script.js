@@ -89,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ".foodLocation"
       ).textContent = `The ${foodName} is in the right side of the fridge on the third shelf`;
     } else {
-      console.log("not found in fridge :(");
+      document.querySelector(".foodLocation").textContent =
+        "This item is not in your fridge ☹️";
     }
 
     //This code could probably be refactored, not very DRY but functional.
